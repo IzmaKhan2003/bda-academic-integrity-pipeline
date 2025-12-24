@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+.pytest_cache/
+.venv/
+# Data files (don't commit large data)
+data/temp/*
+data/archive/*
+*.parquet
+*.csv
+*.json
+logs/*.log
+
+# Docker
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Airflow
+airflow.cfg
+airflow.db
+airflow-webserver.pid
+
+# Keep directory structure
+!data/temp/.gitkeep
+!data/archive/.gitkeep
+!logs/.gitkeep
