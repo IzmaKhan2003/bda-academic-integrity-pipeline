@@ -30,3 +30,66 @@
 [2025-12-24T20:04:09.443+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:04:09.443+0000] {dag.py:2941} INFO - Sync 1 DAGs
 [2025-12-24T20:04:09.500+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:04:09.499+0000] {dag.py:3722} INFO - Setting next_dagrun for simple_data_generation_pipeline to 2025-12-24T20:02:09.499366+00:00, run_after=2025-12-24T20:04:09.499366+00:00
 [2025-12-24T20:04:09.542+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/simple_data_generation_dag.py took 0.359 seconds
+[2025-12-24T20:04:39.836+0000] {processor.py:157} INFO - Started process (PID=184) to work on /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:04:39.838+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/simple_data_generation_dag.py for tasks to queue
+[2025-12-24T20:04:39.839+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:04:39.838+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:04:39.861+0000] {processor.py:839} INFO - DAG(s) dict_keys(['simple_data_generation_pipeline']) retrieved from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:04:39.922+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:04:39.921+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-12-24T20:04:39.981+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:04:39.981+0000] {dag.py:3722} INFO - Setting next_dagrun for simple_data_generation_pipeline to 2025-12-24T20:02:39.980764+00:00, run_after=2025-12-24T20:04:39.980764+00:00
+[2025-12-24T20:04:40.033+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/simple_data_generation_dag.py took 0.203 seconds
+[2025-12-24T20:05:10.175+0000] {processor.py:157} INFO - Started process (PID=189) to work on /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:05:10.180+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/simple_data_generation_dag.py for tasks to queue
+[2025-12-24T20:05:10.184+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:05:10.182+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:05:10.312+0000] {processor.py:839} INFO - DAG(s) dict_keys(['simple_data_generation_pipeline']) retrieved from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:05:10.433+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:05:10.433+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-12-24T20:05:10.515+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:05:10.515+0000] {dag.py:3722} INFO - Setting next_dagrun for simple_data_generation_pipeline to 2025-12-24T20:03:10.515116+00:00, run_after=2025-12-24T20:05:10.515116+00:00
+[2025-12-24T20:05:10.602+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/simple_data_generation_dag.py took 0.445 seconds
+[2025-12-24T20:05:41.025+0000] {processor.py:157} INFO - Started process (PID=194) to work on /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:05:41.032+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/simple_data_generation_dag.py for tasks to queue
+[2025-12-24T20:05:41.037+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:05:41.035+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:05:41.106+0000] {processor.py:839} INFO - DAG(s) dict_keys(['simple_data_generation_pipeline']) retrieved from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:05:41.497+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:05:41.496+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-12-24T20:05:41.640+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:05:41.640+0000] {dag.py:3722} INFO - Setting next_dagrun for simple_data_generation_pipeline to 2025-12-24T20:03:41.640126+00:00, run_after=2025-12-24T20:05:41.640126+00:00
+[2025-12-24T20:05:41.700+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/simple_data_generation_dag.py took 0.701 seconds
+[2025-12-24T20:06:12.112+0000] {processor.py:157} INFO - Started process (PID=199) to work on /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:06:12.123+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/simple_data_generation_dag.py for tasks to queue
+[2025-12-24T20:06:12.126+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:06:12.125+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:06:12.185+0000] {processor.py:839} INFO - DAG(s) dict_keys(['simple_data_generation_pipeline']) retrieved from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:06:12.292+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:06:12.291+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-12-24T20:06:12.341+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:06:12.341+0000] {dag.py:3722} INFO - Setting next_dagrun for simple_data_generation_pipeline to 2025-12-24T20:04:12.341056+00:00, run_after=2025-12-24T20:06:12.341056+00:00
+[2025-12-24T20:06:12.380+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/simple_data_generation_dag.py took 0.296 seconds
+[2025-12-24T20:06:42.447+0000] {processor.py:157} INFO - Started process (PID=204) to work on /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:06:42.451+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/simple_data_generation_dag.py for tasks to queue
+[2025-12-24T20:06:42.453+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:06:42.452+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:06:42.491+0000] {processor.py:839} INFO - DAG(s) dict_keys(['simple_data_generation_pipeline']) retrieved from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:06:42.592+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:06:42.592+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-12-24T20:06:42.655+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:06:42.655+0000] {dag.py:3722} INFO - Setting next_dagrun for simple_data_generation_pipeline to 2025-12-24T20:04:42.655101+00:00, run_after=2025-12-24T20:06:42.655101+00:00
+[2025-12-24T20:06:42.713+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/simple_data_generation_dag.py took 0.274 seconds
+[2025-12-24T20:07:13.170+0000] {processor.py:157} INFO - Started process (PID=209) to work on /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:07:13.175+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/simple_data_generation_dag.py for tasks to queue
+[2025-12-24T20:07:13.178+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:07:13.177+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:07:13.235+0000] {processor.py:839} INFO - DAG(s) dict_keys(['simple_data_generation_pipeline']) retrieved from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:07:13.382+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:07:13.382+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-12-24T20:07:13.492+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:07:13.491+0000] {dag.py:3722} INFO - Setting next_dagrun for simple_data_generation_pipeline to 2025-12-24T20:05:13.491108+00:00, run_after=2025-12-24T20:07:13.491108+00:00
+[2025-12-24T20:07:13.532+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/simple_data_generation_dag.py took 0.379 seconds
+[2025-12-24T20:07:44.047+0000] {processor.py:157} INFO - Started process (PID=214) to work on /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:07:44.050+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/simple_data_generation_dag.py for tasks to queue
+[2025-12-24T20:07:44.052+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:07:44.051+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:07:44.079+0000] {processor.py:839} INFO - DAG(s) dict_keys(['simple_data_generation_pipeline']) retrieved from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:07:44.158+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:07:44.157+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-12-24T20:07:44.217+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:07:44.217+0000] {dag.py:3722} INFO - Setting next_dagrun for simple_data_generation_pipeline to 2025-12-24T20:05:44.216585+00:00, run_after=2025-12-24T20:07:44.216585+00:00
+[2025-12-24T20:07:44.257+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/simple_data_generation_dag.py took 0.222 seconds
+[2025-12-24T20:08:15.039+0000] {processor.py:157} INFO - Started process (PID=219) to work on /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:08:15.042+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/simple_data_generation_dag.py for tasks to queue
+[2025-12-24T20:08:15.046+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:08:15.044+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:08:15.094+0000] {processor.py:839} INFO - DAG(s) dict_keys(['simple_data_generation_pipeline']) retrieved from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T20:08:15.210+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:08:15.209+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-12-24T20:08:15.283+0000] {logging_mixin.py:154} INFO - [2025-12-24T20:08:15.282+0000] {dag.py:3722} INFO - Setting next_dagrun for simple_data_generation_pipeline to 2025-12-24T20:06:15.282246+00:00, run_after=2025-12-24T20:08:15.282246+00:00
+[2025-12-24T20:08:15.336+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/simple_data_generation_dag.py took 0.311 seconds
+[2025-12-24T22:17:46.252+0000] {processor.py:157} INFO - Started process (PID=224) to work on /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T22:17:46.280+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/simple_data_generation_dag.py for tasks to queue
+[2025-12-24T22:17:46.281+0000] {logging_mixin.py:154} INFO - [2025-12-24T22:17:46.281+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-24T22:17:46.571+0000] {processor.py:839} INFO - DAG(s) dict_keys(['simple_data_generation_pipeline']) retrieved from /opt/airflow/dags/simple_data_generation_dag.py
+[2025-12-25T07:01:08.976+0000] {logging_mixin.py:154} INFO - [2025-12-25T07:01:08.975+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-12-25T07:01:09.079+0000] {logging_mixin.py:154} INFO - [2025-12-25T07:01:09.079+0000] {dag.py:3722} INFO - Setting next_dagrun for simple_data_generation_pipeline to 2025-12-25T06:59:09.077955+00:00, run_after=2025-12-25T07:01:09.077955+00:00
+[2025-12-25T07:01:09.460+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/simple_data_generation_dag.py took 0.945 seconds

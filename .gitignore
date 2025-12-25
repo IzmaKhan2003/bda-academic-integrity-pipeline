@@ -42,3 +42,6 @@ airflow-webserver.pid
 !data/temp/.gitkeep
 !data/archive/.gitkeep
 !logs/.gitkeep
+
+/logs 
+WEEK1_COMPLETION.md
