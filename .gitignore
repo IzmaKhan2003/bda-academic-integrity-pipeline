@@ -47,3 +47,5 @@ airflow-webserver.pid
 WEEK1_COMPLETION.md
 logs/dag_processor_manager/dag_processor_manager.log
 logs/dag_processor_manager/dag_processor_manager.log
+phase4.md
+phase3.md
