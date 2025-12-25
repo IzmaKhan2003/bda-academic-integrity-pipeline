@@ -11,11 +11,11 @@ echo -e "\n2. Checking Kafka topics..."
 docker exec kafka kafka-topics --list --bootstrap-server localhost:9092
 
 echo -e "\n3. Testing data generation (30 seconds)..."
-docker exec spark-master timeout 30 python3 /opt/spark-jobs/generators/simple_data_generator.py &
+docker exec spark-master timeout 30 python3 /spark/jobs/generators/simple_data_generator.py &
 GENERATOR_PID=$!
 
 echo -e "\n4. Starting consumer..."
-docker exec -d spark-master python3 /opt/spark-jobs/kafka_to_mongo_consumer.py
+docker exec -d spark-master python3 /spark/jobs/kafka_to_mongo_consumer.py
 
 sleep 35  # Wait for generation to complete
 
