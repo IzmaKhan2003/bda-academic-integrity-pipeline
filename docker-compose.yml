@@ -170,7 +170,9 @@ services:
   # SPARK MASTER
   # ==============================================
   spark-master:
-    image: bde2020/spark-master:3.3.0-hadoop3.3
+    build:
+      context: .
+      dockerfile: docker/spark/Dockerfile.master
     hostname: spark-master
     container_name: spark-master
     environment:
@@ -193,11 +195,14 @@ services:
       retries: 3
       start_period: 60s
 
+
   # ==============================================
   # SPARK WORKER
   # ==============================================
   spark-worker:
-    image: bde2020/spark-worker:3.3.0-hadoop3.3
+    build:
+      context: .
+      dockerfile: docker/spark/Dockerfile.worker
     hostname: spark-worker
     container_name: spark-worker
     depends_on:
@@ -208,7 +213,7 @@ services:
       - SPARK_WORKER_MEMORY=2G
       - SPARK_WORKER_WEBUI_PORT=8081
     ports:
-      - "8082:8081"  # Changed to avoid conflict with Airflow
+      - "8082:8081"
     volumes:
       - ./spark_jobs:/spark/jobs
       - ./data:/data

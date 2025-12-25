@@ -1,0 +1,5 @@
+FROM bde2020/spark-worker:3.3.0-hadoop3.3
+
+USER root
+
+RUN apk add --no-cache py3-numpy py3-scipy
