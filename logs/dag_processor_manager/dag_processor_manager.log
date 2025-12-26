@@ -792,3 +792,618 @@ File Path                                        PID    Runtime      # DAGs    #
 -----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
 /opt/airflow/dags/simple_data_generation_dag.py                           1           0  0.41s           2025-12-25T07:43:32
 ================================================================================
+[2025-12-26T16:09:33.432+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-12-26T16:09:33.438+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-12-26T16:09:33.438+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-12-26T16:09:33.439+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-12-26T16:09:33.444+0000] {manager.py:758} INFO - There are 7 files in /opt/airflow/dags
+[2025-12-26T16:09:33.759+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/analytics_processing_dag.py                                0           0
+/opt/airflow/dags/dashboard_refresh_dag_updated.py    163  0.12s             0           0
+/opt/airflow/dags/cache_refresh_dag.py                                       0           0
+/opt/airflow/dags/realtime_generation_dag.py                                 0           0
+/opt/airflow/dags/simple_data_generation_dag.py                              0           0
+/opt/airflow/dags/dashboard_refresh_dag.py            166  0.10s             0           0
+/opt/airflow/dags/archival_dag.py                                            0           0
+================================================================================
+[2025-12-26T16:10:03.122+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.13s           2025-12-26T16:09:33
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.16s           2025-12-26T16:09:33
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.34s           2025-12-26T16:09:34
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.41s           2025-12-26T16:09:34
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.47s           2025-12-26T16:09:34
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.30s           2025-12-26T16:09:34
+/opt/airflow/dags/archival_dag.py                                            1           0  0.27s           2025-12-26T16:09:34
+================================================================================
+[2025-12-26T16:10:32.975+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.28s           2025-12-26T16:10:04
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.40s           2025-12-26T16:10:04
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.56s           2025-12-26T16:10:06
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.84s           2025-12-26T16:10:04
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.72s           2025-12-26T16:10:05
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.38s           2025-12-26T16:10:06
+/opt/airflow/dags/archival_dag.py                                            1           0  0.82s           2025-12-26T16:10:05
+================================================================================
+[2025-12-26T16:11:02.707+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.11s           2025-12-26T16:10:35
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.11s           2025-12-26T16:10:35
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.30s           2025-12-26T16:10:36
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.27s           2025-12-26T16:10:35
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.30s           2025-12-26T16:10:36
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.25s           2025-12-26T16:10:36
+/opt/airflow/dags/archival_dag.py                                            1           0  0.25s           2025-12-26T16:10:36
+================================================================================
+[2025-12-26T16:11:32.737+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.08s           2025-12-26T16:11:05
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.10s           2025-12-26T16:11:05
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.26s           2025-12-26T16:11:07
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.20s           2025-12-26T16:11:05
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.23s           2025-12-26T16:11:07
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.23s           2025-12-26T16:11:07
+/opt/airflow/dags/archival_dag.py                                            1           0  0.20s           2025-12-26T16:11:07
+================================================================================
+[2025-12-26T16:12:02.383+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.08s           2025-12-26T16:11:36
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.08s           2025-12-26T16:11:36
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.23s           2025-12-26T16:11:38
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.18s           2025-12-26T16:11:36
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.19s           2025-12-26T16:11:38
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.20s           2025-12-26T16:11:38
+/opt/airflow/dags/archival_dag.py                                            1           0  0.16s           2025-12-26T16:11:38
+================================================================================
+[2025-12-26T16:12:32.502+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.15s           2025-12-26T16:12:07
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.18s           2025-12-26T16:12:07
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.23s           2025-12-26T16:12:09
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.31s           2025-12-26T16:12:07
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.29s           2025-12-26T16:12:09
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.19s           2025-12-26T16:12:09
+/opt/airflow/dags/archival_dag.py                                            1           0  0.24s           2025-12-26T16:12:08
+================================================================================
+[2025-12-26T16:13:02.676+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.11s           2025-12-26T16:12:38
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.11s           2025-12-26T16:12:38
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.33s           2025-12-26T16:12:40
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.24s           2025-12-26T16:12:38
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.32s           2025-12-26T16:12:40
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.27s           2025-12-26T16:12:40
+/opt/airflow/dags/archival_dag.py                                            1           0  0.27s           2025-12-26T16:12:40
+================================================================================
+[2025-12-26T16:13:32.743+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.08s           2025-12-26T16:13:08
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.07s           2025-12-26T16:13:08
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.24s           2025-12-26T16:13:11
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.17s           2025-12-26T16:13:08
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.36s           2025-12-26T16:13:11
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.19s           2025-12-26T16:13:11
+/opt/airflow/dags/archival_dag.py                                            1           0  0.32s           2025-12-26T16:13:11
+================================================================================
+[2025-12-26T16:14:02.623+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.13s           2025-12-26T16:13:39
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.07s           2025-12-26T16:13:38
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.25s           2025-12-26T16:13:42
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.29s           2025-12-26T16:13:40
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.31s           2025-12-26T16:13:42
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.20s           2025-12-26T16:13:42
+/opt/airflow/dags/archival_dag.py                                            1           0  0.24s           2025-12-26T16:13:42
+================================================================================
+[2025-12-26T16:14:32.614+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.09s           2025-12-26T16:14:10
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.07s           2025-12-26T16:14:09
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.26s           2025-12-26T16:14:13
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.22s           2025-12-26T16:14:10
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.32s           2025-12-26T16:14:13
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.22s           2025-12-26T16:14:13
+/opt/airflow/dags/archival_dag.py                                            1           0  0.29s           2025-12-26T16:14:13
+================================================================================
+[2025-12-26T16:14:33.619+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-12-26T16:14:33.620+0000] {manager.py:758} INFO - There are 7 files in /opt/airflow/dags
+[2025-12-26T16:15:02.301+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.09s           2025-12-26T16:14:41
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.08s           2025-12-26T16:14:40
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.22s           2025-12-26T16:14:44
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.18s           2025-12-26T16:14:41
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.21s           2025-12-26T16:14:44
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.19s           2025-12-26T16:14:44
+/opt/airflow/dags/archival_dag.py                                            1           0  0.17s           2025-12-26T16:14:43
+================================================================================
+[2025-12-26T16:15:31.789+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.16s           2025-12-26T16:15:12
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.15s           2025-12-26T16:15:11
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.42s           2025-12-26T16:15:15
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.35s           2025-12-26T16:15:12
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.63s           2025-12-26T16:15:14
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.34s           2025-12-26T16:15:15
+/opt/airflow/dags/archival_dag.py                                            1           0  0.53s           2025-12-26T16:15:14
+================================================================================
+[2025-12-26T16:16:01.036+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  -0.28s          2025-12-26T16:15:42
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.08s           2025-12-26T16:15:41
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.48s           2025-12-26T16:15:45
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.18s           2025-12-26T16:15:43
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.38s           2025-12-26T16:15:45
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.41s           2025-12-26T16:15:45
+/opt/airflow/dags/archival_dag.py                                            1           0  0.32s           2025-12-26T16:15:45
+================================================================================
+[2025-12-26T16:16:30.330+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.07s           2025-12-26T16:16:13
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  -0.24s          2025-12-26T16:16:11
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.33s           2025-12-26T16:16:16
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.24s           2025-12-26T16:16:13
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.38s           2025-12-26T16:16:16
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.29s           2025-12-26T16:16:16
+/opt/airflow/dags/archival_dag.py                                            1           0  0.31s           2025-12-26T16:16:15
+================================================================================
+[2025-12-26T16:17:00.078+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.10s           2025-12-26T16:16:43
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.08s           2025-12-26T16:16:42
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.35s           2025-12-26T16:16:47
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.19s           2025-12-26T16:16:43
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.27s           2025-12-26T16:16:46
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.29s           2025-12-26T16:16:47
+/opt/airflow/dags/archival_dag.py                                            1           0  0.21s           2025-12-26T16:16:46
+================================================================================
+[2025-12-26T16:17:30.135+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.09s           2025-12-26T16:17:14
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.09s           2025-12-26T16:17:13
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.30s           2025-12-26T16:17:18
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.19s           2025-12-26T16:17:14
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.36s           2025-12-26T16:17:17
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.24s           2025-12-26T16:17:18
+/opt/airflow/dags/archival_dag.py                                            1           0  0.30s           2025-12-26T16:17:17
+================================================================================
+[2025-12-26T16:17:59.519+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.08s           2025-12-26T16:17:44
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.08s           2025-12-26T16:17:44
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.23s           2025-12-26T16:17:48
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.25s           2025-12-26T16:17:44
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.25s           2025-12-26T16:17:48
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.18s           2025-12-26T16:17:48
+/opt/airflow/dags/archival_dag.py                                            1           0  0.19s           2025-12-26T16:17:48
+================================================================================
+[2025-12-26T16:18:29.055+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.24s           2025-12-26T16:18:15
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.25s           2025-12-26T16:18:15
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.36s           2025-12-26T16:18:19
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.38s           2025-12-26T16:18:15
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.32s           2025-12-26T16:18:18
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.29s           2025-12-26T16:18:18
+/opt/airflow/dags/archival_dag.py                                            1           0  0.30s           2025-12-26T16:18:18
+================================================================================
+[2025-12-26T16:18:59.024+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.50s           2025-12-26T16:18:47
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.75s           2025-12-26T16:18:46
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.60s           2025-12-26T16:18:50
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  1.45s           2025-12-26T16:18:47
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  1.29s           2025-12-26T16:18:50
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.52s           2025-12-26T16:18:50
+/opt/airflow/dags/archival_dag.py                                            1           0  1.20s           2025-12-26T16:18:50
+================================================================================
+[2025-12-26T16:19:27.700+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.08s           2025-12-26T16:19:17
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.08s           2025-12-26T16:19:16
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.44s           2025-12-26T16:19:21
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.21s           2025-12-26T16:19:18
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.39s           2025-12-26T16:19:21
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.41s           2025-12-26T16:19:21
+/opt/airflow/dags/archival_dag.py                                            1           0  0.28s           2025-12-26T16:19:21
+================================================================================
+[2025-12-26T16:19:33.732+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-12-26T16:19:33.735+0000] {manager.py:758} INFO - There are 7 files in /opt/airflow/dags
+[2025-12-26T16:19:57.935+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.11s           2025-12-26T16:19:48
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.08s           2025-12-26T16:19:47
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.22s           2025-12-26T16:19:51
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.31s           2025-12-26T16:19:48
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.26s           2025-12-26T16:19:51
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.21s           2025-12-26T16:19:52
+/opt/airflow/dags/archival_dag.py                                            1           0  0.22s           2025-12-26T16:19:51
+================================================================================
+[2025-12-26T16:20:27.426+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.09s           2025-12-26T16:20:18
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.12s           2025-12-26T16:20:17
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.25s           2025-12-26T16:20:22
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.18s           2025-12-26T16:20:19
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.28s           2025-12-26T16:20:22
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.20s           2025-12-26T16:20:22
+/opt/airflow/dags/archival_dag.py                                            1           0  0.18s           2025-12-26T16:20:21
+================================================================================
+[2025-12-26T16:20:57.186+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.09s           2025-12-26T16:20:49
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.09s           2025-12-26T16:20:48
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.47s           2025-12-26T16:20:53
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.42s           2025-12-26T16:20:50
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.44s           2025-12-26T16:20:52
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.38s           2025-12-26T16:20:53
+/opt/airflow/dags/archival_dag.py                                            1           0  0.35s           2025-12-26T16:20:52
+================================================================================
+[2025-12-26T16:21:27.117+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.13s           2025-12-26T16:21:20
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.18s           2025-12-26T16:21:19
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.30s           2025-12-26T16:21:23
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.37s           2025-12-26T16:21:21
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.27s           2025-12-26T16:21:23
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.43s           2025-12-26T16:21:24
+/opt/airflow/dags/archival_dag.py                                            1           0  0.23s           2025-12-26T16:21:22
+================================================================================
+[2025-12-26T16:21:56.391+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.09s           2025-12-26T16:21:50
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.09s           2025-12-26T16:21:49
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.26s           2025-12-26T16:21:54
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.35s           2025-12-26T16:21:51
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.26s           2025-12-26T16:21:54
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.21s           2025-12-26T16:21:54
+/opt/airflow/dags/archival_dag.py                                            1           0  0.17s           2025-12-26T16:21:53
+================================================================================
+[2025-12-26T16:22:25.882+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.09s           2025-12-26T16:22:20
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.10s           2025-12-26T16:22:19
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.33s           2025-12-26T16:22:24
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.35s           2025-12-26T16:22:22
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.40s           2025-12-26T16:22:24
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.28s           2025-12-26T16:22:24
+/opt/airflow/dags/archival_dag.py                                            1           0  0.51s           2025-12-26T16:22:24
+================================================================================
+[2025-12-26T16:22:55.153+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.63s           2025-12-26T16:22:51
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.14s           2025-12-26T16:22:50
+/opt/airflow/dags/analytics_processing_dag.py        1099  0.02s             1           0  0.33s           2025-12-26T16:22:24
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.29s           2025-12-26T16:22:53
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.39s           2025-12-26T16:22:55
+/opt/airflow/dags/simple_data_generation_dag.py      1102  0.01s             1           0  0.28s           2025-12-26T16:22:24
+/opt/airflow/dags/archival_dag.py                                            1           0  0.46s           2025-12-26T16:22:54
+================================================================================
+[2025-12-26T16:23:24.493+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.16s           2025-12-26T16:23:22
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.14s           2025-12-26T16:23:20
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.37s           2025-12-26T16:22:55
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.48s           2025-12-26T16:23:24
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.39s           2025-12-26T16:22:55
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.31s           2025-12-26T16:22:55
+/opt/airflow/dags/archival_dag.py                                            1           0  0.46s           2025-12-26T16:22:54
+================================================================================
+[2025-12-26T16:23:53.784+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.46s           2025-12-26T16:23:53
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.22s           2025-12-26T16:23:51
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.52s           2025-12-26T16:23:26
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.48s           2025-12-26T16:23:24
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.52s           2025-12-26T16:23:25
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.41s           2025-12-26T16:23:26
+/opt/airflow/dags/archival_dag.py                                            1           0  0.45s           2025-12-26T16:23:25
+================================================================================
+[2025-12-26T16:24:23.671+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py         1184  0.01s             0           1  0.46s           2025-12-26T16:23:53
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.30s           2025-12-26T16:24:22
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.46s           2025-12-26T16:23:57
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.35s           2025-12-26T16:23:55
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.76s           2025-12-26T16:23:56
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.42s           2025-12-26T16:23:57
+/opt/airflow/dags/archival_dag.py                                            1           0  0.68s           2025-12-26T16:23:56
+================================================================================
+[2025-12-26T16:24:33.907+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-12-26T16:24:33.910+0000] {manager.py:758} INFO - There are 7 files in /opt/airflow/dags
+[2025-12-26T16:24:53.105+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.16s           2025-12-26T16:24:23
+/opt/airflow/dags/dashboard_refresh_dag.py           1214  0.01s             0           1  0.30s           2025-12-26T16:24:22
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.34s           2025-12-26T16:24:27
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.36s           2025-12-26T16:24:26
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.41s           2025-12-26T16:24:27
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.31s           2025-12-26T16:24:27
+/opt/airflow/dags/archival_dag.py                                            1           0  0.33s           2025-12-26T16:24:27
+================================================================================
+[2025-12-26T16:25:22.719+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.13s           2025-12-26T16:24:54
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.14s           2025-12-26T16:24:53
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.40s           2025-12-26T16:24:58
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.46s           2025-12-26T16:24:56
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.02s           2025-12-26T16:24:57
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  -0.18s          2025-12-26T16:24:57
+/opt/airflow/dags/archival_dag.py                                            1           0  0.31s           2025-12-26T16:24:57
+================================================================================
+[2025-12-26T16:25:52.555+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.20s           2025-12-26T16:25:24
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.21s           2025-12-26T16:25:23
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.35s           2025-12-26T16:25:29
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.27s           2025-12-26T16:25:27
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.36s           2025-12-26T16:25:28
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.24s           2025-12-26T16:25:28
+/opt/airflow/dags/archival_dag.py                                            1           0  0.30s           2025-12-26T16:25:28
+================================================================================
+[2025-12-26T16:26:22.381+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.17s           2025-12-26T16:25:54
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.20s           2025-12-26T16:25:53
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.40s           2025-12-26T16:26:00
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.43s           2025-12-26T16:25:57
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.44s           2025-12-26T16:25:58
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.29s           2025-12-26T16:25:59
+/opt/airflow/dags/archival_dag.py                                            1           0  0.38s           2025-12-26T16:25:58
+================================================================================
+[2025-12-26T16:26:51.315+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.72s           2025-12-26T16:26:25
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  1.30s           2025-12-26T16:26:25
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.42s           2025-12-26T16:26:31
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.46s           2025-12-26T16:26:28
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.49s           2025-12-26T16:26:29
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.39s           2025-12-26T16:26:30
+/opt/airflow/dags/archival_dag.py                                            1           0  0.41s           2025-12-26T16:26:29
+================================================================================
+[2025-12-26T16:27:21.065+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.15s           2025-12-26T16:26:56
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.14s           2025-12-26T16:26:56
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.37s           2025-12-26T16:27:02
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.30s           2025-12-26T16:26:59
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.45s           2025-12-26T16:27:00
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.33s           2025-12-26T16:27:00
+/opt/airflow/dags/archival_dag.py                                            1           0  0.37s           2025-12-26T16:27:00
+================================================================================
+[2025-12-26T16:27:50.827+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.13s           2025-12-26T16:27:26
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.13s           2025-12-26T16:27:26
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.41s           2025-12-26T16:27:32
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.28s           2025-12-26T16:27:30
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.50s           2025-12-26T16:27:31
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.45s           2025-12-26T16:27:31
+/opt/airflow/dags/archival_dag.py                                            1           0  0.42s           2025-12-26T16:27:31
+================================================================================
+[2025-12-26T16:28:20.279+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.15s           2025-12-26T16:27:57
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.16s           2025-12-26T16:27:57
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.47s           2025-12-26T16:28:03
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.28s           2025-12-26T16:28:01
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.26s           2025-12-26T16:28:01
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.39s           2025-12-26T16:28:02
+/opt/airflow/dags/archival_dag.py                                            1           0  0.31s           2025-12-26T16:28:01
+================================================================================
+[2025-12-26T16:28:49.633+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.17s           2025-12-26T16:28:27
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.17s           2025-12-26T16:28:27
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.38s           2025-12-26T16:28:33
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.35s           2025-12-26T16:28:32
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.39s           2025-12-26T16:28:32
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.28s           2025-12-26T16:28:32
+/opt/airflow/dags/archival_dag.py                                            1           0  0.29s           2025-12-26T16:28:32
+================================================================================
+[2025-12-26T16:29:18.828+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.10s           2025-12-26T16:28:57
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.10s           2025-12-26T16:28:57
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.53s           2025-12-26T16:29:05
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.42s           2025-12-26T16:29:03
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.46s           2025-12-26T16:29:03
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.27s           2025-12-26T16:29:03
+/opt/airflow/dags/archival_dag.py                                            1           0  0.26s           2025-12-26T16:29:03
+================================================================================
+[2025-12-26T16:29:34.338+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-12-26T16:29:34.343+0000] {manager.py:758} INFO - There are 7 files in /opt/airflow/dags
+[2025-12-26T16:29:48.408+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.11s           2025-12-26T16:29:28
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.11s           2025-12-26T16:29:28
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.99s           2025-12-26T16:29:37
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.76s           2025-12-26T16:29:35
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.95s           2025-12-26T16:29:35
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  1.04s           2025-12-26T16:29:36
+/opt/airflow/dags/archival_dag.py                                            1           0  1.08s           2025-12-26T16:29:36
+================================================================================
+[2025-12-26T16:30:17.976+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.16s           2025-12-26T16:29:58
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.17s           2025-12-26T16:29:58
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.45s           2025-12-26T16:30:08
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.36s           2025-12-26T16:30:06
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.39s           2025-12-26T16:30:06
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.26s           2025-12-26T16:30:06
+/opt/airflow/dags/archival_dag.py                                            1           0  0.34s           2025-12-26T16:30:06
+================================================================================
