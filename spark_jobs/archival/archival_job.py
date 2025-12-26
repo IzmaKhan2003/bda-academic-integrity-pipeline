@@ -1,6 +1,6 @@
 """
 Archival Job: MongoDB → HDFS
-Phase 9 - FIXED: Proper MongoDB authentication
+Phase 9 - FIXED: Proper MongoDB authentication & batch deletes
 """
 
 from pyspark.sql import SparkSession
@@ -69,7 +69,7 @@ try:
         spark.stop()
         exit(0)
     
-    # Archive exam_attempts
+    # --- Archive exam_attempts ---
     if old_attempts_count > 0:
         print(f"\nArchiving {old_attempts_count:,} exam attempts to HDFS...")
         
@@ -89,23 +89,24 @@ try:
         
         print(f"  ✓ Archived to HDFS: {output_path}")
         
-        # Delete from MongoDB using PyMongo (which already works)
-        print("  Deleting old records from MongoDB...")
-        
-        # Get list of IDs to delete
-        ids_to_delete = old_attempts.select("attempt_id").rdd.flatMap(lambda x: x).collect()
-        
+        # --- Delete old records in batches ---
         from pymongo import MongoClient
+        BATCH_SIZE = 1000  # Maximum IDs per delete command
         mongo_client = MongoClient('mongodb://admin:admin123@mongodb:27017/')
         db = mongo_client['academic_integrity']
-        
-        result = db.exam_attempts.delete_many({
-            'attempt_id': {'$in': ids_to_delete}
-        })
-        
-        print(f"  ✓ Deleted {result.deleted_count:,} records from MongoDB")
+
+        def batch_delete(collection, ids, id_field):
+            for i in range(0, len(ids), BATCH_SIZE):
+                batch = ids[i:i+BATCH_SIZE]
+                result = collection.delete_many({id_field: {'$in': batch}})
+                print(f"  ✓ Deleted {result.deleted_count:,} records from {collection.name} (batch {i//BATCH_SIZE + 1})")
+
+        ids_to_delete = old_attempts.select("attempt_id").rdd.flatMap(lambda x: x).collect()
+        if ids_to_delete:
+            print("  Deleting old records from MongoDB (exam_attempts)...")
+            batch_delete(db.exam_attempts, ids_to_delete, 'attempt_id')
     
-    # Archive session_logs
+    # --- Archive session_logs ---
     if old_sessions_count > 0:
         print(f"\nArchiving {old_sessions_count:,} session logs to HDFS...")
         
@@ -123,36 +124,13 @@ try:
         
         print(f"  ✓ Archived to HDFS: {output_path}")
         
-        # --- Delete from MongoDB using batches ---
-        from pymongo import MongoClient
-
-        BATCH_SIZE = 1000  # Maximum IDs per delete command
-
-        mongo_client = MongoClient('mongodb://admin:admin123@mongodb:27017/')
-        db = mongo_client['academic_integrity']
-
-        def batch_delete(collection, ids, id_field):
-            for i in range(0, len(ids), BATCH_SIZE):
-                batch = ids[i:i+BATCH_SIZE]
-                result = collection.delete_many({id_field: {'$in': batch}})
-                print(f"  ✓ Deleted {result.deleted_count:,} records from {collection.name} (batch {i//BATCH_SIZE + 1})")
-
-        # --- Exam Attempts ---
-        ids_to_delete = old_attempts.select("attempt_id").rdd.flatMap(lambda x: x).collect()
-        if ids_to_delete:
-            print("  Deleting old records from MongoDB (exam_attempts)...")
-            batch_delete(db.exam_attempts, ids_to_delete, 'attempt_id')
-
-        # --- Session Logs ---
+        # --- Delete old session logs in batches ---
         ids_to_delete = old_sessions.select("log_id").rdd.flatMap(lambda x: x).collect()
         if ids_to_delete:
             print("  Deleting old records from MongoDB (session_logs)...")
             batch_delete(db.session_logs, ids_to_delete, 'log_id')
-
+    
     # Final verification
-    from pymongo import MongoClient
-    mongo_client = MongoClient('mongodb://admin:admin123@mongodb:27017/')
-    db = mongo_client['academic_integrity']
     stats = db.command('dbstats')
     size_mb = stats['dataSize'] / (1024 * 1024)
     
