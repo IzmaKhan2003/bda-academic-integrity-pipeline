@@ -19,10 +19,13 @@ timeout 120 docker exec spark-master python3 /spark/jobs/generators/realtime_dat
 echo ""
 echo "Results:"
 docker exec mongodb mongosh -u admin -p admin123 --eval "
-use academic_integrity;
-print('exam_attempts: ' + db.exam_attempts.count());
-print('session_logs: ' + db.session_logs.count());
-" --quiet
+db = db.getSiblingDB('academic_integrity');
+printjson({
+  exam_attempts: db.exam_attempts.countDocuments({}),
+  session_logs: db.session_logs.countDocuments({})
+});
+"
+
 
 echo ""
 echo "✓ Test complete!"

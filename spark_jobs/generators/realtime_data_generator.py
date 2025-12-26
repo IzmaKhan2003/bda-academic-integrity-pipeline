@@ -273,24 +273,50 @@ class RealtimeDataGenerator:
         print(f"✓ Loaded {len(self.questions_by_exam)} exam-question mappings")
     
     def _create_profiles(self):
-        """Create behavioral profiles"""
         print("Creating student profiles...")
-        
-        from models.student_profiles import StudentProfileFactory
-        
-        factory = StudentProfileFactory(
-            normal_ratio=0.70,
-            ai_cheater_ratio=0.20,
-            colluding_ratio=0.10
-        )
-        
+
         self.profiles = {}
-        for student in self.students:
-            student_id = student['student_id']
-            skill_level = student['skill_level']
-            profile = factory.create_profile(student_id, skill_level)
-            self.profiles[student_id] = profile
-        
+
+        shuffled_students = self.students.copy()
+        random.shuffle(shuffled_students)
+
+        total = len(shuffled_students)
+        normal_count = int(total * 0.70)
+        ai_count = int(total * 0.20)
+        colluding_count = total - normal_count - ai_count
+
+        idx = 0
+
+        # Normal students
+        for _ in range(normal_count):
+            s = shuffled_students[idx]
+            self.profiles[s['student_id']] = NormalStudent(
+                s['student_id'], s['skill_level']
+            )
+            idx += 1
+
+        # AI-assisted
+        for _ in range(ai_count):
+            s = shuffled_students[idx]
+            self.profiles[s['student_id']] = AIAssistedCheater(
+                s['student_id'], s['skill_level']
+            )
+            idx += 1
+
+        # Colluding (grouped)
+        group_id = 1
+        while idx < total:
+            group_size = min(random.randint(2, 4), total - idx)
+            for _ in range(group_size):
+                s = shuffled_students[idx]
+                self.profiles[s['student_id']] = ColludingStudent(
+                    s['student_id'],
+                    s['skill_level'],
+                    collusion_group_id=f'GROUP_{group_id}'
+                )
+                idx += 1
+            group_id += 1
+
         print(f"✓ Created {len(self.profiles)} profiles")
     
     def _create_kafka_producer(self):
