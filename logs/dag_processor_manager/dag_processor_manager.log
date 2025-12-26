@@ -1407,3 +1407,17 @@ File Path                                           PID    Runtime      # DAGs  
 /opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.26s           2025-12-26T16:30:06
 /opt/airflow/dags/archival_dag.py                                            1           0  0.34s           2025-12-26T16:30:06
 ================================================================================
+[2025-12-26T16:30:47.485+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/realtime_generation_dag.py                                 0           1  0.24s           2025-12-26T16:30:29
+/opt/airflow/dags/dashboard_refresh_dag.py                                   0           1  0.25s           2025-12-26T16:30:29
+/opt/airflow/dags/analytics_processing_dag.py                                1           0  0.43s           2025-12-26T16:30:38
+/opt/airflow/dags/dashboard_refresh_dag_updated.py                           1           0  0.29s           2025-12-26T16:30:36
+/opt/airflow/dags/cache_refresh_dag.py                                       1           0  0.32s           2025-12-26T16:30:36
+/opt/airflow/dags/simple_data_generation_dag.py                              1           0  0.28s           2025-12-26T16:30:37
+/opt/airflow/dags/archival_dag.py                                            1           0  0.31s           2025-12-26T16:30:37
+================================================================================
