@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Live Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  body { font-family: Arial; margin: 20px; }
+  .chart-container { width: 600px; margin-bottom: 50px; }
+</style>
+</head>
+<body>
+<h1>📊 Academic Integrity Live Dashboard</h1>
+
+<div class="chart-container">
+  <canvas id="kpiChart"></canvas>
+</div>
+
+<div class="chart-container">
+  <canvas id="trendChart"></canvas>
+</div>
+
+<script>
+async function fetchKPIs() {
+    const res = await fetch('/api/kpis');
+    return res.json();
+}
+
+async function fetchTrend() {
+    const res = await fetch('/api/trend');
+    return res.json();
+}
+
+// KPI Chart
+const kpiCtx = document.getElementById('kpiChart').getContext('2d');
+const kpiChart = new Chart(kpiCtx, {
+    type: 'bar',
+    data: { labels: [], datasets: [{ label: 'KPI Value', data: [], backgroundColor: 'rgba(75, 192, 192, 0.7)' }] },
+    options: { responsive: true, scales: { y: { beginAtZero: true } } }
+});
+
+// Trend Chart
+const trendCtx = document.getElementById('trendChart').getContext('2d');
+const trendChart = new Chart(trendCtx, {
+    type: 'line',
+    data: { labels: [], datasets: [{ label: 'Avg Score', data: [], fill: false, borderColor: 'blue', tension: 0.2 }] },
+    options: { responsive: true, scales: { y: { beginAtZero: true } } }
+});
+
+async function updateCharts() {
+    // KPIs
+    const kpis = await fetchKPIs();
+    kpiChart.data.labels = Object.keys(kpis);
+    kpiChart.data.datasets[0].data = Object.values(kpis);
+    kpiChart.update();
+
+    // Trend
+    const trend = await fetchTrend();
+    trendChart.data.labels = trend.map(item => item._id);
+    trendChart.data.datasets[0].data = trend.map(item => item.avg_score);
+    trendChart.update();
+}
+
+// Update every 3 seconds
+setInterval(updateCharts, 3000);
+updateCharts();
+</script>
+</body>
+</html>
