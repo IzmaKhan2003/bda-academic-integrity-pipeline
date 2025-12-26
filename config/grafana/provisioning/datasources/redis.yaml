@@ -1,0 +1,16 @@
+apiVersion: 1
+
+datasources:
+  - name: Redis-Cache
+    type: redis-datasource
+    uid: redis
+    access: proxy
+    url: redis:6379
+    isDefault: true
+    editable: true
+    jsonData:
+      client: standalone
+      poolSize: 5
+      timeout: 10
+      pingInterval: 0
+      pipelineWindow: 0

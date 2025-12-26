@@ -342,33 +342,6 @@ services:
       retries: 5
       start_period: 90s
 
-  grafana:
-    image: grafana/grafana:10.2.0
-    hostname: grafana
-    container_name: grafana
-    ports:
-      - "3000:3000"
-    environment:
-      - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=admin123
-      - GF_INSTALL_PLUGINS=redis-datasource,grafana-mongodb-datasource
-      - GF_SERVER_ROOT_URL=http://localhost:3000
-      - GF_USERS_ALLOW_SIGN_UP=false
-    volumes:
-      - grafana_data:/var/lib/grafana
-      - ./config/grafana/provisioning:/etc/grafana/provisioning
-    networks:
-      - bda-network
-    healthcheck:
-      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000/api/health"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    depends_on:
-      - mongodb
-      - redis
-    restart: always
-
 # ==============================================
 # NETWORKS
 # ==============================================
@@ -386,4 +359,3 @@ volumes:
   namenode_data:
   datanode_data:
   superset_data:
-  grafana_data:
