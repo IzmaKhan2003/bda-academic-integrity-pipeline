@@ -25,8 +25,8 @@ print("\nReading archived data from HDFS...")
 
 try:
     # Check if archive exists
-    df_attempts = spark.read.parquet("/archive/exam_data/exam_attempts")
-    df_sessions = spark.read.parquet("/archive/exam_data/session_logs")
+    df_attempts = spark.read.parquet("hdfs://namenode:9000/archive/exam_data/exam_attempts")
+    df_sessions = spark.read.parquet("hdfs://namenode:9000/archive/exam_data/session_logs")
     
     print(f"  exam_attempts: {df_attempts.count():,} records")
     print(f"  session_logs: {df_sessions.count():,} records")
@@ -48,12 +48,12 @@ try:
     metadata = {
         "last_updated": datetime.now().isoformat(),
         "exam_attempts": {
-            "location": "/archive/exam_data/exam_attempts",
+            "location": "hdfs://namenode:9000/archive/exam_data/exam_attempts",
             "record_count": df_attempts.count(),
             "partitions": [{"year": p.year, "month": p.month, "day": p.day} for p in partitions_attempts]
         },
         "session_logs": {
-            "location": "/archive/exam_data/session_logs",
+            "location": "hdfs://namenode:9000/archive/exam_data/session_logs",
             "record_count": df_sessions.count(),
             "partitions": [{"year": p.year, "month": p.month, "day": p.day} for p in partitions_sessions]
         }

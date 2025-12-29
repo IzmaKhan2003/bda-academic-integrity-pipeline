@@ -1,150 +1,120 @@
 """
 Archival Job: MongoDB → HDFS
-Phase 9 - FIXED: Proper MongoDB authentication & batch deletes
+Phase 9 - FINAL: Scoping fix & HDFS destination
 """
 
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import year, month, dayofmonth, col
 from datetime import datetime, timedelta
+from pymongo import MongoClient
+import traceback
+
+# --- GLOBAL UTILITIES ---
+def batch_delete(collection, ids, id_field):
+    """Deletes MongoDB documents in batches to avoid command size limits."""
+    BATCH_SIZE = 1000
+    for i in range(0, len(ids), BATCH_SIZE):
+        batch = ids[i:i+BATCH_SIZE]
+        result = collection.delete_many({id_field: {'$in': batch}})
+        print(f"   ✓ Deleted {result.deleted_count:,} records from {collection.name} (batch {i//BATCH_SIZE + 1})")
 
 print("="*70)
 print("ARCHIVAL JOB - Phase 9")
 print("="*70)
 
-# FIXED: Proper MongoDB URI format with auth database
-MONGO_URI = "mongodb://admin:admin123@mongodb:27017/academic_integrity.exam_attempts?authSource=admin"
+# MongoDB Config
+MONGO_URI = "mongodb://admin:admin123@mongodb:27017/academic_integrity?authSource=admin"
 
-# Create Spark session with correct MongoDB config
-spark = SparkSession.builder \
-    .appName("Archival Job") \
-    .config("spark.mongodb.read.connection.uri", MONGO_URI) \
-    .config("spark.mongodb.write.connection.uri", MONGO_URI) \
+# Initialize Spark
+spark = (
+    SparkSession.builder
+    .appName("MongoDB Archival Job")
+    .config("spark.mongodb.read.connection.uri", MONGO_URI)
+    .config("spark.mongodb.write.connection.uri", MONGO_URI)
+    .config("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
     .getOrCreate()
+)
 
 spark.sparkContext.setLogLevel("WARN")
-
 print("\n✓ Spark session created")
 
 # Calculate cutoff (48 hours ago)
 cutoff_time = datetime.now() - timedelta(hours=48)
 cutoff_str = cutoff_time.strftime('%Y-%m-%dT%H:%M:%S')
 
-print(f"\nCutoff time: {cutoff_time}")
+print(f"Cutoff time: {cutoff_time}")
 print(f"Archiving data older than: {cutoff_str}")
 
-# Read MongoDB data with proper auth
-print("\nReading from MongoDB...")
-
 try:
-    # Read exam_attempts with auth
-    df_attempts = spark.read \
-        .format("mongodb") \
-        .option("connection.uri", "mongodb://admin:admin123@mongodb:27017/academic_integrity.exam_attempts?authSource=admin") \
-        .load()
+    # 1. Connect to MongoDB via PyMongo for Deletions
+    mongo_client = MongoClient('mongodb://admin:admin123@mongodb:27017/')
+    db = mongo_client['academic_integrity']
+
+    # 2. Read from MongoDB via Spark
+    print("\nReading from MongoDB...")
     
-    # Read session_logs with auth
-    df_sessions = spark.read \
-        .format("mongodb") \
-        .option("connection.uri", "mongodb://admin:admin123@mongodb:27017/academic_integrity.session_logs?authSource=admin") \
-        .load()
+    df_attempts = spark.read.format("mongodb") \
+        .option("database", "academic_integrity") \
+        .option("collection", "exam_attempts").load()
     
-    print(f"  Total exam_attempts: {df_attempts.count():,}")
-    print(f"  Total session_logs: {df_sessions.count():,}")
-    
-    # Filter old data
-    print(f"\nFiltering data older than {cutoff_str}...")
-    
+    df_sessions = spark.read.format("mongodb") \
+        .option("database", "academic_integrity") \
+        .option("collection", "session_logs").load()
+
+    # 3. Filter data
     old_attempts = df_attempts.filter(col("submission_timestamp") < cutoff_str)
     old_sessions = df_sessions.filter(col("session_start") < cutoff_str)
     
-    old_attempts_count = old_attempts.count()
-    old_sessions_count = old_sessions.count()
-    
-    print(f"  Old exam_attempts: {old_attempts_count:,}")
-    print(f"  Old session_logs: {old_sessions_count:,}")
-    
-    if old_attempts_count == 0 and old_sessions_count == 0:
-        print("\n✓ No data needs archiving (all data is recent)")
-        print("  TIP: Data must be older than 48 hours to archive")
+    attempts_count = old_attempts.count()
+    sessions_count = old_sessions.count()
+
+    print(f"   Old exam_attempts: {attempts_count:,}")
+    print(f"   Old session_logs: {sessions_count:,}")
+
+    if attempts_count == 0 and sessions_count == 0:
+        print("\n✓ No data needs archiving.")
         spark.stop()
         exit(0)
-    
-    # --- Archive exam_attempts ---
-    if old_attempts_count > 0:
-        print(f"\nArchiving {old_attempts_count:,} exam attempts to HDFS...")
-        
-        # Add partition columns
-        df_archive = old_attempts \
+
+    # --- ARCHIVE EXAM ATTEMPTS ---
+    if attempts_count > 0:
+        print(f"\nArchiving {attempts_count:,} attempts to HDFS...")
+        df_attempts_arch = old_attempts \
             .withColumn("year", year(col("submission_timestamp"))) \
             .withColumn("month", month(col("submission_timestamp"))) \
             .withColumn("day", dayofmonth(col("submission_timestamp")))
         
-        # Write to HDFS (Parquet format, partitioned)
-        output_path = "/archive/exam_data/exam_attempts"
+        path = "hdfs://namenode:9000/archive/exam_data/exam_attempts"
+        df_attempts_arch.write.mode("append").partitionBy("year", "month", "day").parquet(path)
         
-        df_archive.write \
-            .mode("append") \
-            .partitionBy("year", "month", "day") \
-            .parquet(output_path)
-        
-        print(f"  ✓ Archived to HDFS: {output_path}")
-        
-        # --- Delete old records in batches ---
-        from pymongo import MongoClient
-        BATCH_SIZE = 1000  # Maximum IDs per delete command
-        mongo_client = MongoClient('mongodb://admin:admin123@mongodb:27017/')
-        db = mongo_client['academic_integrity']
+        # Delete from Mongo
+        ids = old_attempts.select("attempt_id").rdd.flatMap(lambda x: x).collect()
+        batch_delete(db.exam_attempts, ids, 'attempt_id')
 
-        def batch_delete(collection, ids, id_field):
-            for i in range(0, len(ids), BATCH_SIZE):
-                batch = ids[i:i+BATCH_SIZE]
-                result = collection.delete_many({id_field: {'$in': batch}})
-                print(f"  ✓ Deleted {result.deleted_count:,} records from {collection.name} (batch {i//BATCH_SIZE + 1})")
-
-        ids_to_delete = old_attempts.select("attempt_id").rdd.flatMap(lambda x: x).collect()
-        if ids_to_delete:
-            print("  Deleting old records from MongoDB (exam_attempts)...")
-            batch_delete(db.exam_attempts, ids_to_delete, 'attempt_id')
-    
-    # --- Archive session_logs ---
-    if old_sessions_count > 0:
-        print(f"\nArchiving {old_sessions_count:,} session logs to HDFS...")
-        
-        df_archive = old_sessions \
+    # --- ARCHIVE SESSION LOGS ---
+    if sessions_count > 0:
+        print(f"\nArchiving {sessions_count:,} session logs to HDFS...")
+        df_sessions_arch = old_sessions \
             .withColumn("year", year(col("session_start"))) \
             .withColumn("month", month(col("session_start"))) \
             .withColumn("day", dayofmonth(col("session_start")))
         
-        output_path = "/archive/exam_data/session_logs"
+        path = "hdfs://namenode:9000/archive/exam_data/session_logs"
+        df_sessions_arch.write.mode("append").partitionBy("year", "month", "day").parquet(path)
         
-        df_archive.write \
-            .mode("append") \
-            .partitionBy("year", "month", "day") \
-            .parquet(output_path)
-        
-        print(f"  ✓ Archived to HDFS: {output_path}")
-        
-        # --- Delete old session logs in batches ---
-        ids_to_delete = old_sessions.select("log_id").rdd.flatMap(lambda x: x).collect()
-        if ids_to_delete:
-            print("  Deleting old records from MongoDB (session_logs)...")
-            batch_delete(db.session_logs, ids_to_delete, 'log_id')
-    
-    # Final verification
+        # Delete from Mongo
+        ids = old_sessions.select("log_id").rdd.flatMap(lambda x: x).collect()
+        batch_delete(db.session_logs, ids, 'log_id')
+
+    # Final Stats
     stats = db.command('dbstats')
-    size_mb = stats['dataSize'] / (1024 * 1024)
-    
     print("\n" + "="*70)
     print("ARCHIVAL COMPLETE")
-    print("="*70)
-    print(f"MongoDB size after cleanup: {size_mb:.2f} MB")
-    print(f"Archived location: /archive/exam_data/")
+    print(f"MongoDB size after cleanup: {stats['dataSize'] / (1024*1024):.2f} MB")
     print("="*70)
 
 except Exception as e:
     print(f"\n❌ Error: {e}")
-    import traceback
     traceback.print_exc()
-
 finally:
     spark.stop()

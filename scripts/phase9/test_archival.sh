@@ -19,17 +19,18 @@ echo ""
 
 # Step 2: Run archival job 
 echo "2. Running Archival Job..."
-docker exec spark-master /spark/bin/spark-submit \
+docker exec -u root spark-master sh -c "mkdir -p /home/spark/.ivy2 && chown -R spark:spark /home/spark/.ivy2" && \
+docker exec spark-master /opt/spark/bin/spark-submit \
   --master spark://spark-master:7077 \
-  --jars /spark/jars/mongo-spark-connector_2.12-10.1.1.jar,/spark/jars/mongodb-driver-sync-4.10.2.jar,/spark/jars/mongodb-driver-core-4.10.2.jar,/spark/jars/bson-4.10.2.jar \
+  --packages org.mongodb.spark:mongo-spark-connector_2.12:10.1.1 \
   /spark/jobs/archival/archival_job.py
-
-echo ""
+  
+  echo ""
 
 # Step 3: Register Hive metadata (Spark job)
 echo "3. Registering Hive Metadata..."
 docker exec spark-master \
-  /spark/bin/spark-submit \
+  /opt/spark/bin/spark-submit \
   --master spark://spark-master:7077 \
   /spark/jobs/archival/hive_metastore_writer.py
 
