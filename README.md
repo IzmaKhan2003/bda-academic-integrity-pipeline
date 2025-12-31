@@ -1,5 +1,10 @@
 # Real-Time Academic Integrity Detection System
 
+> End-to-end real-time Big Data Analytics system for academic integrity detection.
+> Streams exam and session data through Kafka and Spark, computes integrity KPIs,
+> detects AI usage and collusion, and visualizes results using Grafana dashboards —
+> fully containerized and orchestrated with Airflow.
+
 ## BDA Project - Complete Implementation
 
 A comprehensive Big Data Analytics system for detecting academic integrity violations in real-time, featuring AI usage detection, collusion analysis, and behavioral monitoring.
