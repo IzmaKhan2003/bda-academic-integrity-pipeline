@@ -28,7 +28,7 @@ MONGO_URI = "mongodb://admin:admin123@mongodb:27017/academic_integrity?authSourc
 # Initialize Spark
 spark = (
     SparkSession.builder
-    .appName("MongoDB Archival Job")
+    .appName("MongoDB Archival Job").master("local[*]")
     .config("spark.mongodb.read.connection.uri", MONGO_URI)
     .config("spark.mongodb.write.connection.uri", MONGO_URI)
     .config("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
